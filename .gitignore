@@ -1,0 +1,4 @@
+/.env
+/db.sqlite3
+/remindme.sqlite3
+/node_modules

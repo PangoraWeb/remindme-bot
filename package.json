@@ -1,0 +1,20 @@
+{
+  "name": "lemmy-remindme",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Ategon",
+  "license": "AGPL-3.0",
+  "dependencies": {
+    "chalk": "^5.3.0",
+    "date-fns": "^2.30.0",
+    "dotenv": "^16.3.1",
+    "js-yaml": "^4.1.0",
+    "lemmy-bot": "^0.4.5",
+    "sqlite3": "^5.1.6"
+  },
+  "type": "module"
+}
