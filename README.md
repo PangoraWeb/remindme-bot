@@ -1,4 +1,4 @@
-# Lemmy-RemindMe-Bot
+# Lemmy RemindMe Bot
 A lemmy bot that reminds you after an amount of time
 
 This bot is being hosted already at programming.dev! WARNING: Do not self host in an instance that federates as it will trigger on messages twice
