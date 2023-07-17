@@ -1,8 +1,11 @@
-# Lemmy-RemindMe-Bot
+# Lemmy RemindMe Bot
 A lemmy bot that reminds you after an amount of time
 
-This bot is being hosted already at programming.dev! You dont need to self host unless you want to change it or your instance has been defederated (which should be extremely rare)
-To trigger the bot just mention it at the start of the message. `Ex: @RemindMe@programming.dev remind me in 5 minutes`
+This bot is being hosted already at programming.dev! I have disabled the keyword functionality so bots dont double post. Please do not enable it
+
+This is still available if you want to self host but will need to be triggered off of mentions
+
+`Example: @RemindMe@programming.dev 5 years`
 
 ## Setup
 1. Clone the repository
