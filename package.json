@@ -14,6 +14,7 @@
     "dotenv": "^16.3.1",
     "js-yaml": "^4.1.0",
     "lemmy-bot": "^0.4.5",
+    "patch-package": "^7.0.2",
     "sqlite3": "^5.1.6"
   },
   "type": "module"

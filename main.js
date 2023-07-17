@@ -106,6 +106,7 @@ handlers["mention"] = async ({
 if (allowKeywords) {
     handlers["comment"] = {
         sort: 'New',
+        secondsBetweenPolls: 3,
         handle: async ({
             commentView: {
                 comment,
@@ -121,31 +122,31 @@ if (allowKeywords) {
             for (let i = 1; i < words.length; i++) {
                 const word = words[i];
 
-                if (word === 'seconds' || word === 'second') {
+                if (word.includes('second')) {
                     const seconds = parseInt(words[i - 1]);
                     if (seconds) amount += seconds;
                 }
-                else if (word === 'minutes' || word === 'minute') {
+                else if (word.includes('minute')) {
                     const seconds = parseInt(words[i - 1])*60;
                     if (seconds) amount += seconds;
                 }
-                else if (word === 'hours' || word === 'hour') {
+                else if (word.includes('hour')) {
                     const seconds = parseInt(words[i - 1])*60*60;
                     if (seconds) amount += seconds;
                 }
-                else if (word === 'days' || word === 'day') {
+                else if (word.includes('day')) {
                     const seconds = parseInt(words[i - 1])*60*60*24;
                     if (seconds) amount += seconds;
                 }
-                else if (word === 'weeks' || word === 'week') {
+                else if (word.includes('week')) {
                     const seconds = parseInt(words[i - 1])*60*60*24*7;
                     if (seconds) amount += seconds;
                 }
-                else if (word === 'months' || word === 'month') {
+                else if (word.includes('month')) {
                     const seconds = parseInt(words[i - 1])*60*60*24*7*4;
                     if (seconds) amount += seconds;
                 }
-                else if (word === 'years' || word === 'year') {
+                else if (word.includes('year')) {
                     const seconds = parseInt(words[i - 1])*60*60*24*7*4*12;
                     if (seconds) amount += seconds;
                 }
