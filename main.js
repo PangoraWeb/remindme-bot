@@ -48,10 +48,10 @@ const db = new sqlite3.Database('remindme.sqlite3', (err) => {
 
 
 const bot = new LemmyBot.LemmyBot({
-    instance: process.env.INSTANCE,
+    instance: process.env.LEMMY_INSTANCE,
     credentials: {
-        username: process.env.USERNAME,
-        password: process.env.PASSWORD,
+        username: process.env.LEMMY_USERNAME,
+        password: process.env.LEMMY_PASSWORD,
     },
     dbFile: 'db.sqlite3',
     federation: 'all',
