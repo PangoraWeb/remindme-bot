@@ -7,6 +7,8 @@ This is still available if you want to self host but will need to be triggered o
 
 `Example: @RemindMe@programming.dev 5 years`
 
+# NOTICE: The bot is temporarily offline so that I can update it to properly follow the lemmy.world bot guidelines
+
 ## Setup
 1. Clone the repository
 2. Create an account in the instance you want the bot to have as its home (just make a regular user)
