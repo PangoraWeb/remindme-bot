@@ -23,8 +23,6 @@ const db = new sqlite3.Database('remindme.sqlite3', (err) => {
       if (err) {
         return console.error(err.message)
       }
-      db.all('SELECT * FROM reminders', (err, rows) => console.log(rows))
-
       log('TABLE', 'Loaded reminders table.', LogCategory.SUCCESS)
     }
   )
