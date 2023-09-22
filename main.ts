@@ -1,12 +1,9 @@
-import { format, getWeekOfMonth } from 'date-fns';
 import { load } from 'js-yaml'
 import { readFileSync } from 'fs';
-import LemmyBot from 'lemmy-bot';
+import {LemmyBot} from 'lemmy-bot';
 import sqlite3 from 'sqlite3';
 import chalk from 'chalk';
 import 'dotenv/config';
-import { start } from 'repl';
-
 let { markAsBot, timeCheckInterval, responseMessage, invalidMessage, showLogs, overflowMessage, finalMessage, allowKeywords } = load(readFileSync('config.yaml', 'utf8'));
 
 markAsBot = markAsBot ?? true;
@@ -92,14 +89,14 @@ handlers["mention"] = async ({
     if (amount > 0) {
         // Stop larger than 10 years
         if (amount > 315360000) {
-            createComment({ content: overflowMessage, parent_id: comment.id, post_id: comment.post_id });
+            //createComment({ content: overflowMessage, parent_id: comment.id, post_id: comment.post_id });
             return;
         }
 
         addReminder(amount, comment.ap_id, createComment, comment);
     }
     else {
-        createComment({ content: invalidMessage, parent_id: comment.id, post_id: comment.post_id });
+        //createComment({ content: invalidMessage, parent_id: comment.id, post_id: comment.post_id });
     }
 }
 
@@ -155,57 +152,60 @@ if (allowKeywords) {
             if (amount > 0) {
                 // Stop larger than 10 years
                 if (amount > 315360000) {
-                    createComment({ content: overflowMessage, parent_id: comment.id, post_id: comment.post_id });
+                    //createComment({ content: overflowMessage, parent_id: comment.id, post_id: comment.post_id });
                     return;
                 }
 
                 addReminder(amount, comment.ap_id, createComment, comment);
             }
             else {
-                createComment({ content: invalidMessage, parent_id: comment.id, post_id: comment.post_id });
+                //createComment({ content: invalidMessage, parent_id: comment.id, post_id: comment.post_id });
             }
         }
     }
 }
 
-
-const bot = new LemmyBot.LemmyBot({
-    instance: process.env.LEMMY_INSTANCE,
-    credentials: {
-        username: process.env.LEMMY_USERNAME,
-        password: process.env.LEMMY_PASSWORD,
-    },
-    dbFile: 'db.sqlite3',
-    federation: 'all',
-    markAsBot: markAsBot,
-    handlers: handlers,
-    schedule: [
-        {
-            cronExpression: `0 */${timeCheckInterval} * * * *`,
-            timezone: 'America/Toronto',
-            doTask: async ({createComment}) => {
-                db.all(`SELECT * FROM reminders WHERE end_timestamp <= ?`, [new Date(Date.now())], (err, rows) => {
-                    if (err) {
-                        return console.error(err.message);
-                    }
-
-                    log(`${chalk.grey('DB:')} Found ${rows.length} reminders to post.`);
-
-                    for (const row of rows) {
-                        createComment({ content: finalMessage, parent_id: parseInt(row.parent_id), post_id: parseInt(row.post_id) });
-                    }
-
-                    db.run(`DELETE FROM reminders WHERE end_timestamp <= ?`, [new Date(Date.now())], (err) => {
+if (process.env.LEMMY_INSTANCE && process.env.LEMMY_USERNAME && process.env.LEMMY_PASSWORD){
+    const bot = new LemmyBot({
+        instance: process.env.LEMMY_INSTANCE,
+        credentials: {
+            username: process.env.LEMMY_USERNAME,
+            password: process.env.LEMMY_PASSWORD,
+        },
+        dbFile: 'db.sqlite3',
+        federation: 'all',
+        markAsBot: markAsBot,
+        handlers: handlers,
+        schedule: [
+            {
+                cronExpression: `0 */${timeCheckInterval} * * * *`,
+                timezone: 'America/Toronto',
+                doTask: async ({createComment}) => {
+                    db.all(`SELECT * FROM reminders WHERE end_timestamp <= ?`, [new Date(Date.now())], (err, rows) => {
                         if (err) {
                             return console.error(err.message);
                         }
-                        log(`${chalk.grey('DB:')} Removed reminders from database.`);
+
+                        log(`${chalk.grey('DB:')} Found ${rows.length} reminders to post.`);
+
+                        for (const row of rows) {
+                            //createComment({ content: finalMessage, parent_id: parseInt(row.parent_id), post_id: parseInt(row.post_id) });
+                        }
+
+                        db.run(`DELETE FROM reminders WHERE end_timestamp <= ?`, [new Date(Date.now())], (err) => {
+                            if (err) {
+                                return console.error(err.message);
+                            }
+                            log(`${chalk.grey('DB:')} Removed reminders from database.`);
+                        });
                     });
-                });
+                }
             }
-        }
-    ]
-});
+        ]
+    });
+
+    bot.start();
+}
 
 function addReminder (seconds, link, createComment, comment) {
     const startTimestamp = new Date(Date.now());
@@ -230,7 +230,5 @@ function addReminder (seconds, link, createComment, comment) {
         log(`${chalk.grey('DB:')} Added reminder to database.`);
     });
 
-    createComment({ content: responseMessage.replace("${TIME}", timestamp.toLocaleString("en-US", options)), parent_id: comment.id, post_id: comment.post_id });
+    //createComment({ content: responseMessage.replace("${TIME}", timestamp.toLocaleString("en-US", options)), parent_id: comment.id, post_id: comment.post_id });
 }
-
-bot.start();
