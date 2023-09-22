@@ -4,7 +4,7 @@
   "description": "",
   "main": "main.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node main.js"
   },
   "author": "Ategon",
   "license": "AGPL-3.0",
@@ -14,13 +14,11 @@
     "dotenv": "^16.3.1",
     "js-yaml": "^4.1.0",
     "lemmy-bot": "^0.4.5",
-    "patch-package": "^7.0.2",
+    "sqlite": "^5.0.1",
     "sqlite3": "^5.1.6"
   },
   "type": "module",
   "devDependencies": {
-    "@typescript-eslint/eslint-plugin": "^6.7.2",
-    "@typescript-eslint/parser": "^6.7.2",
     "eslint": "^8.49.0",
     "husky": "^8.0.3",
     "prettier": "^3.0.3"
@@ -31,11 +29,7 @@
     }
   },
   "lint-staged": {
-    "*.ts": [
-      "eslint --fix",
-      "prettier --write"
-    ],
-    "*.tsx": [
+    "*.js": [
       "eslint --fix",
       "prettier --write"
     ]

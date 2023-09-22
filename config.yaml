@@ -1,18 +1,13 @@
 ---
-# Whether to give the bot a bot tag (true) or not (false). Recommended to mark it but the option is here if you already 
-# marked it manually and it starts throwing user_already_exists errors
-markAsBot: false
-
 # How often to update the remind times in minutes
 timeCheckInterval: 1
 
 # Set to true if you want to see log messages. False if not
-# (Note I cant control log messages sent by the bot library so those will still show. Just ones thrown by the bot wont)
+# (Note I cant control log messages sent by the bot library so those will still
+# show. Just ones thrown by the bot wont)
 showLogs: true
 
-
 # ------------------------------------------------------------------------------
-
 
 responseMessage: |
   Gotcha! I'll remind you at ${TIME}.
@@ -23,8 +18,8 @@ invalidMessage: |
   Make sure you're including the interval until you want to be reminded.
 
   ```
-  Example: "Remind me about my dentist appointment in 2 hours"
-  Example: "Message me in 5 minutes"
+  Example: "@RemindMe@programming.dev about my dentist appointment in 2 hours"
+  Example: "@RemindMe@programming.dev Message me in 5 minutes"
   ```
 
   For any issues contact my developer: [Ategon](/u/ategon@programming.dev)
