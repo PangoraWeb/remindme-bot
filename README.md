@@ -29,7 +29,7 @@ To use the bot you need to mention it and put a length of time somewhere in the 
 ## Self-Hosting Setup
 You need node.js downloaded to run this
 
-1. Clone the repository (`git clone https://github.com/Ategon/Lemmy-RemindMe-Bot.git` in a terminal)
+1. Clone the repository (`git clone https://github.com/PangoraWeb/remindme-bot.git` in a terminal)
 2. Create an account in the instance you want the bot to have as its home (just make a regular user)
 3. Create a file called .env in the bot folder and give it values in this format with the data in the quotes (dont add the slashes or the part after the slashes)
 ```
