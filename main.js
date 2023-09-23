@@ -75,7 +75,9 @@ if (
       password: process.env.LEMMY_PASSWORD,
     },
     dbFile: 'db.sqlite3',
-    federation: 'all',
+    federation: {
+      allowList: ['programming.dev'],
+    },
     markAsBot: true,
     handlers: handlers,
     schedule: schedules,
