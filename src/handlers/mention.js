@@ -1,12 +1,22 @@
-import { invalidMessage, overflowMessage } from '../common/config.js'
+import { instances, invalidMessage, overflowMessage } from '../common/config.js'
 import { addReminder } from '../common/reminder.js'
 
 export default async ({
-  mentionView: { comment },
+  mentionView: { comment, community },
   botActions: { createComment },
 }) => {
-  const words = comment.content.split(' ')
+  if (!instances.hasOwnProperty(getCommunityInstance(community))) {
+    return
+  }
+
+  if (!instances[getCommunityInstance(community)].includes(community.name)) {
+    return
+  }
+
+  const words = comment.content.replace('/[\.,\?!]/g', '').replace(/\n/g, " ").split(' ')
   let amount = 0
+
+  console.log(words)
 
   for (let i = 1; i < words.length; i++) {
     const word = words[i]
@@ -54,4 +64,12 @@ export default async ({
       post_id: comment.post_id,
     })
   }
+}
+
+function getCommunityInstance(
+  community
+) {
+    const [, instance] =
+      /.*:\/\/(.*)\/c\//.exec(community.actor_id) || []
+    return instance
 }

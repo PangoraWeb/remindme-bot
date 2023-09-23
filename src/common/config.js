@@ -13,6 +13,7 @@ export const {
   showLogs,
   overflowMessage,
   finalMessage,
+  instances
 } = (() => {
   let config = load(readFileSync('config.yaml', 'utf8'))
 

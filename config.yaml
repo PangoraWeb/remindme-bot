@@ -5,7 +5,7 @@ timeCheckInterval: 1
 # Set to true if you want to see log messages. False if not
 # (Note I cant control log messages sent by the bot library so those will still
 # show. Just ones thrown by the bot wont)
-showLogs: true
+showLogs: false
 
 # ------------------------------------------------------------------------------
 
@@ -33,3 +33,60 @@ overflowMessage: |
 
 finalMessage: |
   Hey, here is your reminder!
+
+# ------------------------------------------------------------------------------
+
+instances:
+  programming.dev: # The instance name
+    - godot # Community slugs (value in the url)
+    - unreal
+    - unity
+    - programming
+    - rust
+    - gamedev
+    - programmer_humor
+    - linux
+    - python
+    - lemmy_dev
+    - meta
+    - privacy
+    - webdev
+    - experienced_devs
+    - linux4noobs
+    - commandline
+    - devops
+    - android
+    - git
+    - no_stupid_questions
+    - cpp
+    - javascript
+    - dotnet
+    - cs_career_questions
+    - android_dev
+    - programming_horror
+    - challenges
+    - java
+    - vscode
+    - auai
+    - golang
+    - neovim
+    - c_lang
+    - ask_experienced_devs
+    - docker
+    - linuxupskillchallenge
+    - community_request
+    - pangora
+    - programming_languages
+    - typescript
+    - angular
+    - nix
+    - css
+    - cool_github_projects
+    - gamedev_news
+    - learn_programming
+    - postgresql
+    - kubernetes
+    - security
+    - bad_ui_battles
+    - regex
+    - react
