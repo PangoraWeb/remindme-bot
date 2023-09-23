@@ -1,0 +1,33 @@
+name: Federation Request
+description: 🌲 Request that the bot gets added to your community
+title: "[Federation]: "
+labels: ["federation", "triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        For community owners and mods in the fediverse who want the bot to work in their community! Thanks for taking the time to fill it out :)
+  - type: input
+    id: instance
+    attributes:
+      label: Instance
+      description: What instance (site) is your community hosted on?
+      placeholder: e.g. programming.dev
+    validations:
+      required: true
+  - type: input
+    id: community
+    attributes:
+      label: Community Name
+      description: What is the community(or communities) that you want added? (please provide the value in the url, not the display name)
+      placeholder: e.g. gamedev
+    validations:
+      required: true
+  - type: input
+    id: contact
+    attributes:
+      label: Contact Information
+      description: What user (on the site) can be messaged to double check that you're a moderator?
+      placeholder: e.g. Ategon@programming.dev
+    validations:
+      required: true
