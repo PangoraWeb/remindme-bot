@@ -27,7 +27,7 @@ body:
     id: contact
     attributes:
       label: Contact Information
-      description: What user can be dm to double check that you're a moderator?
+      description: What user (on the site) can be messaged to double check that you're a moderator?
       placeholder: e.g. Ategon@programming.dev
     validations:
       required: true
