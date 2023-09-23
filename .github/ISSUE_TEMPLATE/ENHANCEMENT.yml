@@ -1,0 +1,24 @@
+name: Feature Request
+description: 🌱 Create a Feature Request
+labels: ["enhancement", "triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to suggest some new features for the bot
+  - type: checkboxes
+    attributes:
+      label: Requirements
+      description: Before you create a feature request, please check the following –
+      options:
+        - label: Check to see if this request already exists [here](https://github.com/PangoraWeb/remindme-bot/issues?labels=enhancement)
+          required: true
+        - label: Make sure It's a single feature. Please don't request multiple features in one issue.
+          required: true
+  - type: textarea
+    id: description
+    attributes:
+      label: Describe the feature you want
+      description: Give a good description of what you want added. Also explain why its needed
+    validations:
+      required: true
