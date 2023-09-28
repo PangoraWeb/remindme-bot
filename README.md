@@ -26,6 +26,8 @@ To use the bot you need to mention it and put a length of time somewhere in the 
 
 `Example: @RemindMe@programming.dev remind me about this in 2 minutes`
 
+In order to function in your community you need to request that it be added to the whitelist in the issues tab in this repository (only mods + admins of the community can request)
+
 ## Self-Hosting Setup
 You need node.js downloaded to run this
 
