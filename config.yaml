@@ -37,6 +37,16 @@ finalMessage: |
 # ------------------------------------------------------------------------------
 
 instances:
+  lemmy.world:
+    - bikecommuting
+    - louisrossmann
+  feddit.de:
+    - dresden
+    - physik
+    - raumfahrt
+    - mathematik
+    - robotik
+    - padel
   programming.dev: # The instance name
     - godot # Community slugs (value in the url)
     - unreal
