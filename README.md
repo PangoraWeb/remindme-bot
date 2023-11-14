@@ -1,13 +1,13 @@
 <div align="center">
   
-![GitHub tag (latest SemVer)](https://img.shields.io/github/release/Ategon/Lemmy-RemindMe-Bot.svg?style=for-the-badge)
-[![GitHub issues](https://img.shields.io/github/issues-raw/Ategon/Lemmy-RemindMe-Bot.svg?style=for-the-badge)](https://github.com/PippitWeb/pippit/issues)
-[![License](https://img.shields.io/github/license/Ategon/Lemmy-RemindMe-Bot.svg?style=for-the-badge)](LICENSE)
-![GitHub stars](https://img.shields.io/github/stars/Ategon/Lemmy-RemindMe-Bot.svg?style=for-the-badge)
+![GitHub tag (latest SemVer)](https://img.shields.io/github/release/PangoraWeb/remindme-bot.svg?style=for-the-badge)
+[![GitHub issues](https://img.shields.io/github/issues-raw/PangoraWeb/remindme-bot.svg?style=for-the-badge)](https://github.com/PippitWeb/pippit/issues)
+[![License](https://img.shields.io/github/license/PangoraWeb/remindme-bot.svg?style=for-the-badge)](LICENSE)
+![GitHub stars](https://img.shields.io/github/stars/PangoraWeb/remindme-bot.svg?style=for-the-badge)
 
 </div>
 <div align="center">
-  <img src="https://github.com/Ategon/Lemmy-RemindMe-Bot/assets/73616169/7b5a8297-7c60-4bb7-b09d-63feaa72803a" width=200px height=200px></img>
+  <img src="https://github.com/PangoraWeb/remindme-bot/assets/73616169/7b5a8297-7c60-4bb7-b09d-63feaa72803a" width=200px height=200px></img>
   <h3 align="center"><a href="">RemindMe Bot</a></h3>
   <p align="center">
     A reminder bot for Pangora, Lemmy, and Kbin to remind yourself after a period of time.
